@@ -1,14 +1,10 @@
-
 from django.urls import path
+from rest_framework.routers import SimpleRouter
 
-from ads.views import AdDetailView, AdListView, AdDeleteView, AdUpdateView, AdCreateView, AdUploadImage
+from ads.views import AdViewSet
 
+router = SimpleRouter()
+router.register('', AdViewSet)
+urlpatterns = []
 
-urlpatterns = [
-    path('', AdListView.as_view()),
-    path('<int:pk>/', AdDetailView.as_view()),
-    path('create/', AdCreateView.as_view()),
-    path('update/<int:pk>/', AdUpdateView.as_view()),
-    path('delete/<int:pk>/', AdDeleteView.as_view()),
-    path('upload_image/<int:pk>/', AdUploadImage.as_view()),
-]
+urlpatterns += router.urls

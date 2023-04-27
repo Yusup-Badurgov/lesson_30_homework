@@ -1,7 +1,8 @@
-
 from django.urls import path
+from rest_framework.routers import SimpleRouter
 
-from users.views import UserListView, UserDetailView, UserCreateView, UserUpdateView, UserDeleteView
+from users.views import UserListView, UserDetailView, UserCreateView, UserUpdateView, UserDeleteView, LocationViewSet
+
 
 urlpatterns = [
     path('', UserListView.as_view()),
@@ -11,3 +12,5 @@ urlpatterns = [
     path('delete/<int:pk>/', UserDeleteView.as_view()),
 
 ]
+
+

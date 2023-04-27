@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Location(models.Model):
     name = models.CharField('Название', max_length=100, unique=True)
     lat = models.DecimalField('Латтитуда', max_digits=8, decimal_places=6, null=True, blank=True)
@@ -11,7 +12,6 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
-
 
 
 class UserRoles(models.TextChoices):
@@ -36,4 +36,3 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
-
