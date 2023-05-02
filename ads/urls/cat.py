@@ -1,7 +1,7 @@
 
 from django.urls import path
 
-from ads.views import CatListView, CatDetailView, CatCreateView, CatUpdateView, CatDeleteView
+from ads.views.ad import CatListView, CatDetailView, CatCreateView, CatUpdateView, CatDeleteView
 
 
 urlpatterns = [

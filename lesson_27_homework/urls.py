@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
 
-from ads.views import main_view
+from ads.views.ad import main_view
 from lesson_27_homework import settings
 from users.views import LocationViewSet
 
@@ -31,7 +31,7 @@ urlpatterns = [
     path('users/', include("users.urls")),
     path('ads/', include("ads.urls.ad")),
     path('cat/', include("ads.urls.cat")),
-
+    path('selection/', include("ads.urls.selection")),
     path('admin/', admin.site.urls),
 ]
 
